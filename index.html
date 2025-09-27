@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Desbloqueo por conocimiento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Responde correctamente para acceder</h1>
+    <form id="quizForm">
+      <label>¿Capital de Japón?</label>
+      <input type="text" name="q1" required>
+
+      <label>¿Lenguaje usado en Laravel?</label>
+      <input type="text" name="q2" required>
+
+      <button type="submit">Verificar</button>
+    </form>
+
+    <div id="secretContent" class="hidden">
+      <h2>🎉 ¡Acceso concedido!</h2>
+      <p>Este es el contenido secreto que solo los sabios pueden ver.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
