@@ -1,7 +1,7 @@
 // Respuestas correctas en forma de hash SHA-256
 const correctHashes = [
-  '2c26b46b68ffc68ff99b453c1d30413413422f1640e3b6c2e5b8b7e7d4d7c4c0', // "tokio"
-  'e7cf3ef4f17c3999a94f2c6f612e8a888e5c9b3f6f3f3f3f3f3f3f3f3f3f3f3f'  // "php"
+  '434de5e6a47f94752708362f575012e50855c5de6eb557564c9d7ae267b35e4c', // "tokio"
+  '12a5d18ee896e59954bdce0f4acc7212eebe03dae1834ef4ce160ac5afa5c4a8'  // "php"
 ];
 
 async function hashAnswer(answer) {
