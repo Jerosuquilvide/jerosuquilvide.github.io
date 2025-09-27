@@ -1,7 +1,8 @@
 // Respuestas correctas en forma de hash SHA-256
 const correctHashes = [
-  '434de5e6a47f94752708362f575012e50855c5de6eb557564c9d7ae267b35e4c', // "tokio"
-  '12a5d18ee896e59954bdce0f4acc7212eebe03dae1834ef4ce160ac5afa5c4a8'  // "php"
+  '91decd0c42b79a764bbc9d12792363115ad4392c5b91e731c772141575daf369',
+  '07936a243cd14f0c9e30fe29852a44fe52134636ad2afee524a3cd82ef1630c6',
+  '8d6b69638b96ccd3d80ba9350f1f769791e0f92de52f7c745f215f43c6a2f0e1'
 ];
 
 async function hashAnswer(answer) {
@@ -14,13 +15,48 @@ async function hashAnswer(answer) {
 document.getElementById('quizForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const formData = new FormData(e.target);
-  const answers = [formData.get('q1'), formData.get('q2')];
+  const answers = [formData.get('q1'), formData.get('q2'),formData.get('q3')];
 
   const hashedAnswers = await Promise.all(answers.map(hashAnswer));
   const isCorrect = hashedAnswers.every((hash, i) => hash === correctHashes[i]);
 
   if (isCorrect) {
-    document.getElementById('secretContent').classList.remove('hidden');
+    Swal.fire({
+      title: "Una mas, yo no te amo, yo te ...",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off"
+      },
+      showCancelButton: true,
+      confirmButtonText: "A ver...",
+      showLoaderOnConfirm: true,
+      preConfirm: async (text) => {
+        try {
+          if(text == "amito"){
+            Swal.fire({
+              title: "Ok, si sos vos , hola Aldi :3",
+              icon: "success",
+              draggable: true
+            });
+            document.getElementById('secretContent').classList.remove('hidden');
+          }else{
+            Swal.fire({
+              title: "Juuuira bicho",
+              icon: "error",
+              draggable: true
+            });
+          }
+          
+          
+        } catch (error) {
+          Swal.showValidationMessage(`
+            Request failed: ${error}
+          `);
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    })
+
   } else {
     alert('Alguna respuesta es incorrecta. Intenta de nuevo.');
   }
