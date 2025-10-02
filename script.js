@@ -1,4 +1,3 @@
-// Respuestas correctas en forma de hash SHA-256
 const correctHashes = [
   '91decd0c42b79a764bbc9d12792363115ad4392c5b91e731c772141575daf369',
   '07936a243cd14f0c9e30fe29852a44fe52134636ad2afee524a3cd82ef1630c6',
@@ -38,7 +37,13 @@ document.getElementById('quizForm').addEventListener('submit', async function(e)
               icon: "success",
               draggable: true
             });
-            document.getElementById('secretContent').classList.remove('hidden');
+            let p1 = document.getElementById('principal')
+            p1.setAttribute('hidden',true)
+            // document.getElementById('principal').classList.add('ocultar')
+            // document.getElementById('secundario').classList.remove('ocultar')
+            let p2 = document.getElementById('secundario')
+            p2.style.display = '';
+            p2.removeAttribute('hidden')
           }else{
             Swal.fire({
               title: "Juuuira bicho",
@@ -61,3 +66,4 @@ document.getElementById('quizForm').addEventListener('submit', async function(e)
     alert('Alguna respuesta es incorrecta. Intenta de nuevo.');
   }
 });
+

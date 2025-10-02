@@ -2,13 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¿Quien sos? 🤨</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="containerPrim" id="principal">
     <h1>A ver, quien sos 🫣?</h1>
-    <p>Pss: todas las respuestas van en minusculas y sin acentos :p. </p>
+     <div class="note">
+        <p>Pss: todas las respuestas van en minusculas y sin acentos :p.</p>
+    </div>
+
     <form id="quizForm">
       <label>¿Donde nos vimos por primera vez?</label>
       <input type="text" name="q1" required>
@@ -18,15 +22,58 @@
 
       <label>Si hablamos de tiempo, para ...</label>
       <input type="text" name="q3" required>
-
+      
       <button type="submit">Verificar</button>
     </form>
-
-    <div id="secretContent" class="hidden">
-      <h2>🎉 ¡Acceso concedido!</h2>
-      <p>Este es el contenido secreto que solo los sabios pueden ver.</p>
-    </div>
+    
   </div>
+      <div class="container" id="secundario" style="display: none;" hidden>
+          <div class="envelope-wrapper">
+              <div class="envelope">
+                  <div class="letter">
+                      <div class="text">
+                          <strong>Aldi 💖</strong>
+                          <p>
+                              Tengo una pregunta muy frecuente en mi cabeza hace ya varios meses, ¿Por que te amo tanto? la cual sigue sin respuesta
+logica, por que esto no lleva nada de lógica (mas allá del asesinato de gallinas que hiciste)... 
+Pero si me llevo a pensar en lo que siento por vos, en este amor por vos, en nosotros... 
+¿ Qué es el amor ? 
+Bueno, primero se que hay distintos tipos de amor, puede ser el amor de un padre a un hijo, entre hermanos, a tu mascotas etc,
+pero hoy en dia hay un amor que esta en peligro de existinción, que es el amor puro e incondicional por una persona, que en
+algun momento fue una completa extraña pero hoy representa un mundo entero, entonces, ¿ que es el amor? 
+Es bancarte los quilombos, la locura y esos momentos donde sentis que el mundo te aplasta y no podes más.
+No pasa por una calentura, por que a la cama te puede llevar cualquiera,
+eso, para mi si vale mucho la pena y es super dificil de encontrar en un mundo tán efímero donde todos quieren lo rapido, 
+el placer instantáneo, el goce.
+Por que el amor si bien si es goce, tampoco es solamente lo positivo, tambien es sostener al otro, cuando tenes tus caprichos, 
+tus sombras, tus dias malos, esos dias que la vida te pasa por encima y ojo, no digo que yo no los tenga, para nada...
+entonces alguien que te ama, te respeta, te tolera y te ayuda a salir adelante, trata de que seas una mejor persona.
+Por eso yo creo que el amor se tiene que nutrir y ser un equilibro de ambos mundos, de la noche y del dia. 
+Bueno, una vez definido lo que es para mi el amor, creo que ahora vas a comprender un poquitito mas cuando te digo que te amo.
+Por que yo, te amo para siempre Aldi :3. 
+Gracias por la persona tan linda que sos, por ayudarme cuando no puedo, por tenerme paciencia por absolutamente todo. 
+Amo tu forma de ser, amo tu locura y tu amor. 
+Ojalá te quedes toda la eternidad, compañera de vida. 
+                          </p>
+                          <img src="./images/firstchat.jpeg" alt="Foto especial" class="letter-img">
+                        </br>
+                          <strong>PD: Si llegaste a leer esto, tenes un pedido para retirar en Manina, tenes que pasar 20:30 hs desp de jugar fn :p</strong>
+                          </br>
+                      </div>
+                  </div>
+              </div>
+              <div class="heart"></div>
+          </div>
+        </div>
+      <!-- <h2>Bueno, esta bien parece que tenes ganas de ver esto...</h2>
+      <p>Este es el contenido secreto que solo los sabios pueden ver.</p> -->
+
+   <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js" integrity="sha384-kbCFm2/S3Aeo6W+kDHL67KALQ56pj0cOortdL4ttsTN9rUAS7GHlvlxWkZ3V475L" crossorigin="anonymous"></script>
 </body>
